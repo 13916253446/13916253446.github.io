@@ -11,6 +11,8 @@
 		<style type="text/css">
 			body {
 				margin: 0;
+				font-size: 12px;
+				line-height: 22px;
 			}
 			
 			.menu_wrapper_bc {
@@ -25,23 +27,27 @@
 				box-sizing: border-box;
 			}
 			
-			h2,h5 {
+			h2,
+			h5 {
 				margin: 8px 0;
 			}
 			
 			.link_bc {
 				color: rgb(0, 0, 188);
 			}
-			[data-this]{
+			
+			[data-this] {
 				margin-top: 20px;
 			}
-			.right_bc{				
+			
+			.right_bc {
 				overflow-y: auto;
 				overflow-x: hidden;
 				height: 100vh;
-				padding: 15px;				
+				padding: 15px;
 				box-sizing: border-box;
 			}
+			
 			.content_wrapper_bc {
 				width: 500px;
 			}
@@ -72,6 +78,29 @@
 				font-weight: bold;
 				padding: 10px;
 				line-height: 20px;
+			}
+			
+			.code_wrapper_bc {
+				background-color: #111;
+				padding: 10px;
+				border-radius: 5px;
+				color: #a6e22e;
+				font-size: 12px;
+			}
+			
+			.annotation_bc {
+				color: #75715e;
+			}
+			
+			.code_padding_bc {
+				padding-left: 2em;
+			}
+			
+			.code_bc {
+				padding-left: 3px;
+				padding-right: 3px;
+				color: #c7254e;
+				background: #f9f2f4;
 			}
 		</style>
 	</head>
@@ -143,7 +172,7 @@
 						if(targetDoms) targetDoms.scrollIntoView();
 					}
 				},false);
-			}();
+			}();		
 		</script>
 	</body>
 </html>

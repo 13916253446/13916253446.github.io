@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>owner.js文档</title>
 	</head>
+
 	<body>
 		<div class="content_bc">
 			<h2>owner.js简介</h2>
 			<div class="navigation_wrapper_bc">
 				<div data-target="requestAnimationFrame">1.每秒60帧函数requestAnimationFrame</div>
-				
+				<div data-target="showLoading">2.显示loading动画</div>
+				<div data-target="lazyImgBase">3.懒加载可用的base64图片</div>
+				<div data-target="hideLoading">4.隐藏Loading动画</div>
 			</div>
 			<div data-this="requestAnimationFrame">
-				<h5>1.每秒60帧函数requestAnimationFrame</h4>
-				requestAnimationFrame是浏览器用于定时循环操作的一个接口，类似于setTimeout，主要用途是按帧对网页进行重绘
+				<h5>1.每秒60帧函数requestAnimationFrame</h5>
+				<div>requestAnimationFrame是浏览器用于定时循环操作的一个接口，类似于setTimeout，主要用途是按帧对网页进行重绘</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+					function test(){<br />
+						<span class="code_padding_bc"></span>requestAnimationFrame(test);<br />
+					};<br />
+					requestAnimationFrame(test);<br />
+				</div>
+			</div>
+			<div data-this="showLoading">
+				<h5>2.显示loading动画 showLoading</h5>
+				<div>
+					<span class="code_bc">showLoading</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上,可选参数<span class="code_bc">canClick</span>，默认为<span class="code_bc">false</span><br />
+					canClick：true表示显示loading动画的时候，页面还可触发点击事件<br />
+					canClick：fale相反
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+					nativeCacheObj.showLoading(true);
+				</div>
+			</div>
+			<div data-this="lazyImgBase">
+				<h5>3.懒加载可用的base64图片lazyImgBase</h5>
+				<div>
+					<span class="code_bc">lazyImgBase</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	var img=nativeCacheObj.lazyImgBase;
+				</div>
+			</div>
+			<div data-this="hideLoading">
+				<h5>4.隐藏loading动画hideLoading</h5>
+				<div>
+					<span class="code_bc">hideLoading</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	nativeCacheObj.hideLoading();
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript">
