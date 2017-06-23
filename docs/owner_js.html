@@ -18,6 +18,11 @@
 				<div data-target="hideMask">6.隐藏遮罩层</div>
 				<div data-target="showTextMessagebox">7.自动消失的消息提示</div>
 				<div data-target="showSuccessPopup">8.显示成功提示的弹窗</div>
+				<div data-target="getUrlParam">9.获取链接参数的值</div>
+				<div data-target="get">10.利用原生XMLHttpRequest发出get请求数据</div>
+				<div data-target="post">11.利用原生XMLHttpRequest发出post请求与服务器交互</div>
+				<div data-target="loadFile">12.加载文件到当前环境</div>
+				<div data-target="Database">13.存储以及读取数据Database</div>
 			</div>
 			<div data-this="requestAnimationFrame">
 				<h5>1.每秒60帧函数requestAnimationFrame</h5>
@@ -108,7 +113,90 @@
 				   			<div class="annotation_bc code_padding_bc"><span class="code_padding_bc"></span>//do something....</div>
 				   		<span class="code_padding_bc"></span>}<br />
 				   	});<br />
+				   	<div class="annotation_bc">//如图所示</div>
 				   <img src="../src/demo1.png" />
+				</div>
+			</div>
+			<div data-this="getUrlParam">
+				<h5>9.获取链接参数的值getUrlParam</h5>
+				<div>
+					<span class="code_bc">getUrlParam(name)</span>挂载在<span class="code_bc">window</span>对象上,必传参数<span class="code_bc">name</span>表示要获取的链接的key<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例,https://www.taobao.com/?time=1</div>
+				    var time=getUrlParam("time");<span class="annotation_bc">//1</span>
+				</div>
+			</div>
+			<div data-this="get">
+				<h5>10.get请求数据 get</h5>
+				<div>
+					<span class="code_bc">get(url,parram,callback,async)</span>挂载在<span class="code_bc">zd</span>原型上,必传参数<span class="code_bc">url</span>以及<span class="code_bc">callback</span>,用法与jQuery的ajax类似<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				    zd.get("www.taobao.com", {time:1}, function(){<br />
+				    	<div class="annotation_bc code_padding_bc">//do something....</div>
+				    });<br />
+				</div>
+			</div>
+			<div data-this="post">
+				<h5>11.发出post请求数据 post</h5>
+				<div>
+					<span class="code_bc">post(url,parram,callback,async)</span>挂载在<span class="code_bc">zd</span>原型上,必传参数<span class="code_bc">url</span>以及<span class="code_bc">callback</span>,用法与jQuery的ajax类似<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				    zd.post("www.taobao.com", {time:1}, function(){<br />
+				    	<div class="annotation_bc code_padding_bc">//do something....</div>
+				    });<br />
+				</div>
+			</div>
+			<div data-this="loadFile">
+				<h5>12.加载文件 loadFile</h5>
+				<div>
+					<span class="code_bc">loadFile(url,option)</span>挂载在<span class="code_bc">zd</span>原型上,必传参数<span class="code_bc">url</span>表示文件的路径，可选参数<span class="code_bc">option</span>类型为<span class="code_bc">Object</span>,里面的key有<span class="code_bc">needInsert</span>表示是否直接插入当前环境默认为<span class="code_bc">true</span>,<span class="code_bc">async</span>表示加载文件是否是异步，默认为<span class="code_bc">false</span>,<span class="code_bc">cache</span>表示是否缓存起来，这里的缓存是永久缓存，如果传入的值为<span class="code_bc">true</span>的话，下次再次请求会先判断缓存里面有没有，如果有直接从缓存拿取，默认为<span class="code_bc">false</span>,<span class="code_bc">alias</span>表示别名也就是缓存里面的<span>key</span>,<span class="code_bc">version</span>表示版本，如果拉取的版本与缓存里面的版本不同的话，会重新发出请求并缓存最新的数据，<span class="code_bc">callBack</span>表示加载文件成功之后的回调<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				    zd.loadFile("./js/jquery.js",{<br />
+				    	<span class="code_padding_bc"></span>needInsert: false,<br />
+		                <span class="code_padding_bc"></span>async: true,		<br />              
+		                <span class="code_padding_bc"></span>callBack: function (data)<span class="annotation_bc">//data：文件的内容</span> {<br />
+		                	<div class="annotation_bc code_padding_bc"><span class="code_padding_bc"></span>//do something....</div>
+		                <span class="code_padding_bc"></span>}<br />
+				    });<br />
+				</div>
+			</div>
+			<div data-this="Database">
+				<h5>13.存储以及读取数据</h5>
+				<div>
+					<span class="code_bc">get(key,callBack)</span>挂载在<span class="code_bc">yyq_storage</span>原型上用于读取缓存在数据库(<span class="code_bc">yyq_db</span>)的数据,必传参数<span class="code_bc">key</span>表示要读取数据对应的字段以及<span class="code_bc">callBack</span>表示读取成功之后的回调，会返回存储的数据<br /><br />
+					<span class="code_bc">set(key,val,callBack)</span>挂载在<span class="code_bc">yyq_storage</span>原型上用于写入数据到数据库(<span class="code_bc">yyq_db</span>)的数据,必传参数<span class="code_bc">key</span>表示数据要写入的字段以及<span class="code_bc">val</span>表示要写的数据，val可以是<span class="code_bc">String</span>类型也可以是<span class="code_bc">Array</span>类型也可以是<span class="code_bc">Object</span>类型以及<span class="code_bc">callBack</span>表示写入之后的回调，会返回一个包含<span class="code_bc">isSucces</span>以及<span>msg</span>字段的对象，表示是否写入成功<br />
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例,存储数据</div>
+				    yyq_storage.set("yyq_hospitl_tempt",[<br />
+					   <span class="code_padding_bc"></span> {<br />
+					    	<span class="code_padding_bc"></span><span class="code_padding_bc"></span>OrganName:"苏州市立医院",<br />
+					    	<span class="code_padding_bc"></span><span class="code_padding_bc"></span>OrganId:4267<br />
+					    <span class="code_padding_bc"></span>},<br />
+					     <span class="code_padding_bc"></span>{<br />
+					    	<span class="code_padding_bc"></span><span class="code_padding_bc"></span>OrganName:"苏州明日医院",<br />
+					    	<span class="code_padding_bc"></span><span class="code_padding_bc"></span>OrganId:4268<br />
+					    <span class="code_padding_bc"></span>}<br />
+				    ],function(MSG){<br />
+				    	<span class="code_padding_bc"></span>if(MSG.isSuccess){<br />
+				    		
+				    	<span class="code_padding_bc"></span>}else{<br />
+				    		
+				    	<span class="code_padding_bc"></span>}<br />
+				    });<br />
+				    <div class="annotation_bc">//示例,拉取数据</div>
+				    yyq_storage.get("yyq_hospitl_tempt",function(data){<br />
+				    	<span class="code_padding_bc"></span>if(data!=null&&data!=""){<br />
+				    		
+				    	<span class="code_padding_bc"></span>}<br />
+				    });<br />
 				</div>
 			</div>
 		</div>
