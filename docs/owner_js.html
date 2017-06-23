@@ -14,6 +14,10 @@
 				<div data-target="showLoading">2.显示loading动画</div>
 				<div data-target="lazyImgBase">3.懒加载可用的base64图片</div>
 				<div data-target="hideLoading">4.隐藏Loading动画</div>
+				<div data-target="showMask">5.显示遮罩层</div>
+				<div data-target="hideMask">6.隐藏遮罩层</div>
+				<div data-target="showTextMessagebox">7.自动消失的消息提示</div>
+				<div data-target="showSuccessPopup">8.显示成功提示的弹窗</div>
 			</div>
 			<div data-this="requestAnimationFrame">
 				<h5>1.每秒60帧函数requestAnimationFrame</h5>
@@ -30,8 +34,8 @@
 				<h5>2.显示loading动画 showLoading</h5>
 				<div>
 					<span class="code_bc">showLoading</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上,可选参数<span class="code_bc">canClick</span>，默认为<span class="code_bc">false</span><br />
-					canClick：true表示显示loading动画的时候，页面还可触发点击事件<br />
-					canClick：fale相反
+					canClick：<span class="code_bc">true</span>表示显示loading动画的时候，页面还可触发点击事件<br />
+					canClick：<span class="code_bc">fale</span>相反
 				</div>
 				<div class="code_wrapper_bc">
 					<div class="annotation_bc">//示例</div>
@@ -56,6 +60,55 @@
 				<div class="code_wrapper_bc">
 					<div class="annotation_bc">//示例</div>
 				   	nativeCacheObj.hideLoading();
+				</div>
+			</div>
+			<div data-this="showMask">
+				<h5>5.显示遮罩层showMask</h5>
+				<div>
+					<span class="code_bc">showMask</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上,可选参数<span class="code_bc">callBack</span>表示点击遮罩层的回调函数<br /><br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	nativeCacheObj.showMask(function(){
+				   		<div class="annotation_bc code_padding_bc">//do something....</div>
+				   	});
+				</div>
+			</div>
+			<div data-this="hideMask">
+				<h5>6.隐藏遮罩层hideMask</h5>
+				<div>
+					<span class="code_bc">hideMask</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	nativeCacheObj.hideMask();
+				</div>
+			</div>
+			<div data-this="hideMask">
+				<h5>7.自动消失的消息提示showTextMessagebox</h5>
+				<div>
+					<span class="code_bc">showTextMessagebox(msg,delayTime)</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上,必传参数<span class="code_bc">msg</span>表示要显示的消息内容，可选参数<span class="code_bc">delayTime</span>表示经过多少秒之后提示内容消失,默认是800ms<br />				
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	nativeCacheObj.showTextMessagebox("亲，参数有误哦"，1500);
+				</div>
+			</div>
+			<div data-this="showSuccessPopup">
+				<h5>8.显示成功提示的弹窗showSuccessPopup</h5>
+				<div>
+					<span class="code_bc">showSuccessPopup(option)</span>挂载在<span class="code_bc">nativeCacheObj</span>原型上,必传参数<span class="code_bc">option</span>,类型为<span class="code_bc">Object</span>,字段有<span class="code_bc">Title</span>表示弹窗的标题，<span class="code_bc">Content</span>表示弹窗的正文,<span class="code_bc">Callback</span>表示点击确定后的回调，类型必须为<span class="code_bc">Function</span><br />			
+				</div>
+				<div class="code_wrapper_bc">
+					<div class="annotation_bc">//示例</div>
+				   	nativeCacheObj.showSuccessPopup({<br />
+				   		<span class="code_padding_bc"></span>Title:"测试",<br />
+				   		<span class="code_padding_bc"></span>Content:"数据保存成功了哦",<br />
+				   		<span class="code_padding_bc"></span>Callback:function(){<br />
+				   			<div class="annotation_bc code_padding_bc"><span class="code_padding_bc"></span>//do something....</div>
+				   		<span class="code_padding_bc"></span>}<br />
+				   	});<br />
+				   <img src="../src/demo1.png" />
 				</div>
 			</div>
 		</div>
