@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -123,8 +123,7 @@
 									var linkDom=document.createElement("link");
 									linkDom.rel="import";linkDom.href=item.link_src;
 									document.head.appendChild(linkDom);
-									linkDom.onload=function(){
-										nativeCacheObj.hideLoading();
+									linkDom.onload=function(){										
 										item.loaded=true;
 										var htmlDom=linkDom.import.querySelector('.content_bc');
 									  	if(htmlDom)pageData.contentDom.innerHTML=htmlDom.innerHTML;
