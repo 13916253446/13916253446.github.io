@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta content="telephone=no" name="format-detection" />
 		<meta content="email=no" name="format-detection" />
-		<link rel="preload" href="./docs/owner_js.html" as="" />
+		<link rel="preload" href="./docs/owner_js.html" as="document" />
 		<title>孕育桥API文档</title>
 		<style type="text/css">
 			body {
@@ -121,13 +121,14 @@
 								pageData.base_js_promise.then(function(){
 									nativeCacheObj.showLoading();
 									var linkDom=document.createElement("link");
-									linkDom.rel="import";linkDom.href=item.link_src;
-									document.head.appendChild(linkDom);
-									linkDom.onload=function(){										
-										item.loaded=true;
-										var htmlDom=linkDom.import.querySelector('.content_bc');
-									  	if(htmlDom)pageData.contentDom.innerHTML=htmlDom.innerHTML;
+									linkDom.rel = "import"; linkDom.href = item.link_src;
+									linkDom.onload = function () {
+									    item.loaded = true;
+									    var htmlDom = linkDom.import.querySelector('.content_bc');
+									    if (htmlDom) pageData.contentDom.innerHTML = htmlDom.innerHTML;
 									}
+									document.head.appendChild(linkDom);
+									
 								});
 							}							
 						}
