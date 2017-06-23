@@ -123,6 +123,7 @@
 									var linkDom=document.createElement("link");
 									linkDom.rel = "import"; linkDom.href = item.link_src;
 									linkDom.onload = function () {
+									    nativeCacheObj.hideLoading();
 									    item.loaded = true;
 									    var htmlDom = linkDom.import.querySelector('.content_bc');
 									    if (htmlDom) pageData.contentDom.innerHTML = htmlDom.innerHTML;
