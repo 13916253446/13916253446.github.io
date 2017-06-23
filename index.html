@@ -1,11 +1,148 @@
-﻿---
-　　layout: default
-　　title: 我的Blog
-　　---
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-    {% for post in site.posts %}
-    <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta content="telephone=no" name="format-detection" />
+		<meta content="email=no" name="format-detection" />
+		<link rel="preload" href="./_ports/owner_js.html" as="" />
+		<title>孕育桥API文档</title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			.menu_wrapper_bc {
+				padding: 15px;
+				width: 200px;
+				white-space: nowrap;
+				overflow-y: auto;
+				overflow-x: hidden;
+				height: 100vh;
+				word-break: break-all;
+				box-shadow: 1px 0 #DDD;
+				box-sizing: border-box;
+			}
+			
+			h2,h5 {
+				margin: 8px 0;
+			}
+			
+			.link_bc {
+				color: rgb(0, 0, 188);
+			}
+			[data-this]{
+				margin-top: 20px;
+			}
+			.right_bc{				
+				overflow-y: auto;
+				overflow-x: hidden;
+				height: 100vh;
+				padding: 15px;				
+				box-sizing: border-box;
+			}
+			.content_wrapper_bc {
+				width: 500px;
+			}
+			
+			.zd_row {
+				display: flexbox;
+				display: -webkit-flex;
+				display: flex;
+			}
+			
+			.zd_full {
+				flex: 1;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				width: 0%;
+			}
+			
+			.zd_vcenter {
+				-webkit-box-align: center;
+				align-items: center;
+				-webkit-align-items: center;
+			}
+			
+			.navigation_wrapper_bc {
+				background-color: #bdc3c7;
+				color: #2980b9;
+				font-size: 14px;
+				font-weight: bold;
+				padding: 10px;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper_bc zd_row">
+			<!--菜单容器-->
+			<div class="menu_wrapper_bc">
+				<h2>孕育桥API文档</h5>
+				<div>作者：<span class="link_bc">崔海峰</span></div><br />
+				<div>授权：<span class="link_bc">臻鼎健康有限公司</span></div>
+				<h4>目录</h4>
+				<div class="menu_item_wrapper">					
+				</div>
+			</div>
+			<div class="right_bc zd_full">
+				<div class="content_wrapper_bc">					
+				</div>
+			</div>
+		</div>
+		<script class="base_js_bc" type="text/javascript" defer async src="js/owner.js" ></script>
+		<script type="text/javascript">
+			var pageData={
+				menuModel:[
+					{name:"owner.js",link_src:"./_ports/owner_js.html",loaded:false}
+				],
+				menuDom:document.querySelector(".menu_item_wrapper"),
+				contentDom:document.querySelector(".content_wrapper_bc"),
+			};
+			!function(){
+				//基础库promise
+				pageData.base_js_promise=new Promise(function(resolve){
+					document.querySelector(".base_js_bc").onload=resolve;
+				});
+				//拼接菜单
+				pageData.menuModel.map(function(item,index){
+					var div=document.createElement("div");
+					div.innerHTML=index+1+".<span class='link_bc'>"+item.name+"</span>";
+					pageData.menuDom.appendChild(div);
+					//点击菜单
+					div.addEventListener("click",function(){
+						if(item.link_src!=null){
+							if(item.loaded){
+								var htmlDom=document.querySelector("link[rel='import'][href='"+item.link_src+"']");
+								if(htmlDom&&htmlDom.import.querySelector('.content_bc'))pageData.contentDom.innerHTML=htmlDom.import.querySelector('.content_bc').innerHTML;
+							}else{
+								pageData.base_js_promise.then(function(){
+									nativeCacheObj.showLoading();
+									var linkDom=document.createElement("link");
+									linkDom.rel="import";linkDom.href=item.link_src;
+									document.head.appendChild(linkDom);
+									linkDom.onload=function(){
+										nativeCacheObj.hideLoading();
+										item.loaded=true;
+										var htmlDom=linkDom.import.querySelector('.content_bc');
+									  	if(htmlDom)pageData.contentDom.innerHTML=htmlDom.innerHTML;
+									}
+								});
+							}							
+						}
+					},false);
+				});
+				//跳转至锚点
+				document.addEventListener("click",function(){
+					var targetDom=arguments[0].target;
+					if(targetDom&&targetDom.dataset&&targetDom.dataset.target) {
+						var targetDoms=document.querySelector("[data-this='"+targetDom.dataset.target+"']");
+						if(targetDoms) targetDoms.scrollIntoView();
+					}
+				},false);
+			}();
+		</script>
+	</body>
+</html>
