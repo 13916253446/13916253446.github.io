@@ -122,11 +122,12 @@
 				</div>
 			</div>
 		</div>
-		<script class="base_js_bc" type="text/javascript" defer async src="js/owner.js" ></script>		
+		<script class="base_js_bc" type="text/javascript" defer async src="js/owner.js" ></script>			
 		<script type="text/javascript">
 			var pageData={
 				menuModel:[
-					{name:"owner.js",link_src:"./docs/owner_js.html",loaded:false}
+					{name:"owner.js",link_src:"./docs/owner_js.html",loaded:false},
+					{name:"Picker_One_Column.js",link_src:"./docs/Picker_One_Column.html",loaded:false}
 				],
 				menuDom:document.querySelector(".menu_item_wrapper"),
 				contentDom:document.querySelector(".content_wrapper_bc"),
@@ -160,16 +161,17 @@
 							}else{
 								pageData.base_js_promise.then(function(){
 									nativeCacheObj.showLoading();
-									var linkDom=document.createElement("link");
-									linkDom.rel = "import"; linkDom.href = item.link_src;
-									linkDom.onload = function () {
+									pageData.html_import_promise.then(function(){
+										var linkDom=document.createElement("link");
+										linkDom.rel = "import"; linkDom.href = item.link_src;
+										linkDom.onload = function () {
 									    nativeCacheObj.hideLoading();
 									    item.loaded = true;
 									    var htmlDom = linkDom.import.querySelector('.content_bc');
 									    if (htmlDom) pageData.contentDom.innerHTML = htmlDom.innerHTML;
 									}
 									document.head.appendChild(linkDom);
-									
+									});																		
 								});
 							}							
 						}

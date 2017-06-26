@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="content_bc">
+			<h2>Picker_One_Column.js简介</h2>
+			<div>
+				<span class="code_bc">Picker_One_Column.js</span>是一个单列的<span class="code_bc">Picker</span>组件，
+				绑定在<span class="code_bc">yyq_components</span>原型上的<span class="code_bc">picker_one_column</span>对象.
+				<br />说明:使用前请先调用<span class="code_bc">initData(arg,option)</span>初始化数据，必传参数<span class="code_bc">arg</span>表示要显示的数据，数据格式可以是对象集合，也可以是字符串集合<span class="code_bc">String:["测试","测试"],Object：[{text:"测试",value:"测试"}]</span>,
+				<span class="code_bc">option</span>表示组件的配置项，包含有<span class="code_bc">autoHide</span>字段，默认值是<span class="code_bc">true</span>表示点击组件以外的部分是否点击组件外部自动隐藏组件。以及<span class="code_bc">ConfirmCallback</span>字段，表示点击确定之后的回调函数，类型<span>Function</span>,返回选中的值。以及<span class="code_bc">CancelCallback</span>字段，表示点击取消之后调用的回调函数，类型<span class="code_bc">Function</span>.
+				<br />
+				初始化完成之后，每次显示都只需要调用<span class="code_bc">show(val)</span>,<span>val</span>传入初始化值，如果之前初始化的时候传入的对象集合，那么这里需要默认的值就要传对象的<span class="code_bc">text</span>字段的值。				
+			</div>
+			<div class="code_wrapper_bc">
+				<div class="annotation_bc">//示例:</div>
+				<div class="annotation_bc">//调用显示前，先初始化数据</div>
+				yyq_components.picker_one_column.initData(["崔海峰1","崔海峰2","崔海峰3"],{<br />
+					<span class="code_padding_bc"></span>autoHide:false,<br />
+					<span class="code_padding_bc"></span>ConfirmCallback:function(){<br />
+						<span class="code_padding_bc"></span><span class="code_padding_bc"></span><span class="annotation_bc">//do something....</span><br />
+					<span class="code_padding_bc"></span>},<br />
+				});<br />
+				<div class="annotation_bc">//显示组件，如果组件的原始数据没有变，那么只需要初始化一次数据就可以</div>
+				yyq_components.picker_one_column.show("崔海峰2");
+				<div class="annotation_bc">//如图所示:</div>
+				<img src="../src/demo2.png" />
+			</div>
+		</div>
+	</body>
+
+</html>
