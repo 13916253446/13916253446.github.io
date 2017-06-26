@@ -122,7 +122,7 @@
 				</div>
 			</div>
 		</div>
-		<script class="base_js_bc" type="text/javascript" defer async src="js/owner.js" ></script>
+		<script class="base_js_bc" type="text/javascript" defer async src="js/owner.js" ></script>		
 		<script type="text/javascript">
 			var pageData={
 				menuModel:[
@@ -135,6 +135,16 @@
 				//基础库promise
 				pageData.base_js_promise=new Promise(function(resolve){
 					document.querySelector(".base_js_bc").onload=resolve;
+				});
+				//html import支持库
+				pageData.html_import_promise=new Promise(function(resolve){
+					if("import" in document.createElement("link")) resolve();
+					else{
+						var script=document.createElement("script");
+						script.src="js/webcomponents-lite.js";
+						script.onload=resolve;
+						document.head.appendChild(script);
+					}
 				});
 				//拼接菜单
 				pageData.menuModel.map(function(item,index){
