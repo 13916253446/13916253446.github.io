@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="content_bc">
+			<h2>Picker_Date.js简介</h2>
+			<div>
+				<span class="code_bc">Picker_Date.js</span>日期选择格式为<span class="code_bc">YYYY-MM-dd</span>的<span class="code_bc">Picker</span>组件，
+				绑定在<span class="code_bc">yyq_components</span>原型上的<span class="code_bc">picker_date</span>对象.
+				<br />说明:使用前请先调用<span class="code_bc">initData(option)</span>初始化数据，必须参数
+				<span class="code_bc">option</span>表示组件的配置项，包含有<span class="code_bc">autoHide</span>字段，默认值是<span class="code_bc">true</span>表示点击组件以外的部分是否点击组件外部自动隐藏组件。以及<span class="code_bc">ConfirmCallback</span>字段，表示点击确定之后的回调函数，类型<span>Function</span>,返回选中的值。以及<span class="code_bc">CancelCallback</span>字段，表示点击取消之后调用的回调函数，类型<span class="code_bc">Function</span>
+				以及<span class="code_bc">MaxYear</span>表示最大的年份，默认值为当前年份加上5，以及参数<span class="code_bc">MinYear</span>,表示最小年份，默认值是当前年份减去50.
+				<br />
+				初始化完成之后，每次显示都只需要调用<span class="code_bc">show(val)</span>,<span>val</span>传入初始化值，可以是一个<span class="code_bc">Date</span>类型，也可以是一个<span class="code_bc">Date String</span>类型				
+			</div>
+			<div class="code_wrapper_bc">
+				<div class="annotation_bc">//示例:</div>
+				<div class="annotation_bc">//调用显示前，先初始化数据</div>
+				yyq_components.picker_date.initData({<br />
+					<span class="code_padding_bc"></span>MaxYear:2020,<br />
+					<span class="code_padding_bc"></span>MinYear:1993,<br />
+					<span class="code_padding_bc"></span>ConfirmCallback:function(val){<br />
+						<span class="code_padding_bc"></span><span class="code_padding_bc"></span>if(new Date(val.replace(/-/g,"/"))<=new Date()){<br />
+							<span class="code_padding_bc"></span><span class="code_padding_bc"></span><span class="code_padding_bc"></span>console.error("不能小于当前日期哦");<br />
+							<span class="code_padding_bc"></span><span class="code_padding_bc"></span><span class="code_padding_bc"></span>return false;<br />
+						<span class="code_padding_bc"></span><span class="code_padding_bc"></span>}<br />
+					<span class="code_padding_bc"></span>}<br />
+				});<br />
+				<div class="annotation_bc">//显示组件，如果组件的原始数据没有变，那么只需要初始化一次数据就可以</div>
+				yyq_components.picker_date.show("1993-02-05");<br />
+				<img src="../src/demo4.png" />
+			</div>
+		</div>
+	</body>
+</html>

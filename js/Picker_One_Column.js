@@ -65,13 +65,15 @@
                     if (current.$) {
                         $(wrapperDom.querySelector(".Picker_One_Column_back")).on("touchend", function () {
                             arguments[0].stopPropagation(); arguments[0].preventDefault();
+                            var result = defaultConfig.CancelCallback();
+                            if (Object.prototype.toString.call(result) == "[object Boolean]" && !result) return;
                             closeComponent();
-                            defaultConfig.CancelCallback();
                         });
                         $(wrapperDom.querySelector(".Picker_One_Column_ok")).on("touchend", function () {
                             arguments[0].stopPropagation(); arguments[0].preventDefault();
+                            var result = defaultConfig.ConfirmCallback(wrapperDom.dataset.str);
+                            if (Object.prototype.toString.call(result) == "[object Boolean]" && !result) return;
                             closeComponent();
-                            defaultConfig.ConfirmCallback(wrapperDom.dataset.str);
                         });
                         $(maskDom).on("touchend", function () {
                             arguments[0].stopPropagation(); arguments[0].preventDefault();
@@ -79,12 +81,14 @@
                         })
                     } else {
                         wrapperDom.querySelector(".Picker_One_Column_back").addEventListener("click", function () {
+                            var result = defaultConfig.CancelCallback();
+                            if (Object.prototype.toString.call(result) == "[object Boolean]" && !result) return;
                             closeComponent();
-                            defaultConfig.CancelCallback();
                         }, false);
                         wrapperDom.querySelector(".Picker_One_Column_ok").addEventListener("click", function () {
+                            var result = defaultConfig.ConfirmCallback(wrapperDom.dataset.str);
+                            if (Object.prototype.toString.call(result) == "[object Boolean]" && !result) return;
                             closeComponent();
-                            defaultConfig.ConfirmCallback(wrapperDom.dataset.str);
                         }, false);
                         maskDom.addEventListener("click", function () {
                             if (defaultConfig.autoHide) closeComponent();
