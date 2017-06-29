@@ -106,6 +106,9 @@
 			.menu_item_wrapper div{
 				padding: 5px 0;
 			}
+			a{
+				text-decoration: none;
+			}
 		</style>
 	</head>
 
@@ -114,8 +117,8 @@
 			<!--菜单容器-->
 			<div class="menu_wrapper_bc">
 				<h2>孕育桥API文档</h5>
-				<div>作者：<span class="link_bc">崔海峰</span></div><br />
-				<div>授权：<span class="link_bc">臻鼎健康有限公司</span></div>
+				<div>作者：<span class="link_bc my_self_link"><a href="#">崔海峰</a></span></div><br />
+				<div>授权：<span class="link_bc company_link"><a href="#">臻鼎健康有限公司</a></span></div>
 				<h4>目录</h4>
 				<div class="menu_item_wrapper">					
 				</div>
@@ -156,7 +159,7 @@
 				//拼接菜单
 				pageData.menuModel.map(function(item,index){
 					var div=document.createElement("div");
-					div.innerHTML=index+1+".<span class='link_bc'>"+item.name+"</span>";
+					div.innerHTML=index+1+".<span class='link_bc'><a href='#'>"+item.name+"</a></span>";
 					pageData.menuDom.appendChild(div);
 					//点击菜单
 					div.addEventListener("click",function(){
@@ -190,6 +193,14 @@
 						var targetDoms=document.querySelector("[data-this='"+targetDom.dataset.target+"']");
 						if(targetDoms) targetDoms.scrollIntoView();
 					}
+				},false);
+				//跳转至公司地址
+				document.querySelector(".company_link").addEventListener("click",function(){
+					window.location.href="http://www.zhending.com/";
+				},false);
+				//跳转至个人地址
+				document.querySelector(".my_self_link").addEventListener("click",function(){
+					window.location.href="http://www.cuihaifeng.top";
 				},false);
 			}();				
 		</script>
