@@ -1,0 +1,91 @@
+/* 头部高度 */
+/* 左边菜单栏宽度 */
+.row_wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.row_vcenter {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.row_center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.row_full {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.vrow_wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.header_box {
+  height: 100px;
+  background: -webkit-linear-gradient(54deg, #9a1dff 0%, #9a1dff 44%, #3993ff 100%);
+  background: linear-gradient(36deg, #9a1dff 0%, #9a1dff 44%, #3993ff 100%);
+}
+.bottom_box {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.bot_left_box {
+  width: 300px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+  white-space: nowrap;
+}
+.bot_right_box {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  bottom: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #ecf1f4;
+  padding: 20px 15px;
+}
+.header_wrapper {
+  padding: 0 20px;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.admin_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #e2e1db;
+}
+.text_center {
+  text-align: center;
+}
+.row_line {
+  height: 1px;
+  background-color: #e9eaec;
+}
