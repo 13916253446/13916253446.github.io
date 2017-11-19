@@ -3,7 +3,7 @@ html {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   -webkit-text-size-adjust: 100%;
           text-size-adjust: 100%;
@@ -187,4 +187,7 @@ html {
   opacity: 0;
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
+}
+.scroll_x_display {
+  display: initial;
 }
