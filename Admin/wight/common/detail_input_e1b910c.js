@@ -33,6 +33,10 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
   //
   //
   //
+  //
+  //
+  //
+  //
   
   module.exports = {
       props: ["add", "model"],
@@ -44,7 +48,8 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
               left_active: false,
               areaInput: "", //输入的文章内容
               articalDetail: "", //转化后的文章内容
-              ArticalTitle: "" //文章标题
+              ArticalTitle: "", //文章标题
+              Introduction:"",//文章简介
           };
       },
       watch: {
@@ -55,6 +60,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
               this.updateModel = val;
               this.typeObj = val.parent || {};
               this.ArticalTitle = val.ArticalTitle;
+              this.Introduction = val.Introduction;
               this.areaInput = val.Detail || "";
           }
       },
@@ -77,6 +83,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
               if (this.typeObj.TypeId == null) return;
               if (this.areaInput == null || this.areaInput == "") return;
               if (this.ArticalTitle == null || this.ArticalTitle == "") return;
+              if (this.Introduction == null || this.Introduction == "") return;
               tools.showLoading();
               //新增
               if (this.add) {
@@ -88,6 +95,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
                   var ArticalDetail = new ArticalDetail();
                   ArticalDetail.set("Detail", current.areaInput);
                   ArticalDetail.set("ArticalTitle", current.ArticalTitle);
+                  ArticalDetail.set("Introduction", current.Introduction);
                   ArticalDetail.set("ArticalTypeId", current.typeObj.TypeId);
                   ArticalDetail.set("ArticalTypeName", current.typeObj.TypeName);
                   ArticalDetail.set("parent", ArticalTypes);
@@ -100,6 +108,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
                               TypeId: current.typeObj.TypeId,
                               Detail: current.areaInput,
                               ArticalTitle: current.ArticalTitle,
+                              Introduction: current.Introduction,
                               objectId: model.objectId,
                               ArticalTypeId: current.typeObj.TypeId,
                               ArticalTypeName: current.typeObj.TypeName,
@@ -125,6 +134,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
                   query.get(this.updateModel.objectId, {
                       success: function(gameScore) {
                           gameScore.set("ArticalTitle", current.ArticalTitle);
+                          gameScore.set("Introduction", current.Introduction);
                           gameScore.set("Detail", current.areaInput);
                           gameScore.set("ArticalTypeId", current.typeObj.TypeId);
                           gameScore.set("ArticalTypeName", current.typeObj.TypeName);
@@ -132,6 +142,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
                               current.$store.state.detailModel.map(function(item) {
                                   if (item.objectId == current.updateModel.objectId) {
                                       item.ArticalTitle = current.ArticalTitle;
+                                      item.Introduction = current.Introduction;
                                       item.Detail = current.areaInput;
                                       item.ArticalTypeId = current.typeObj.TypeId;
                                       item.ArticalTypeName = current.typeObj.TypeName;
@@ -173,7 +184,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
   }else{
     __vue__options__ = module.exports;
   }
-  __vue__options__.render =function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"artical_detail_wrapper",class:{active:_vm.$store.state.showInput}},[_c('div',{staticClass:"header_bc row_wrapper row_vcenter"},[_c('svg',{staticClass:"left_icon",on:{"click":_vm.back}},[_c('use',{attrs:{"xlink:href":_vm.$store.state.commonIcon+'#左箭头'}})])]),_vm._v(" "),_c('div',{staticClass:"content_wrapper"},[_c('div',{staticClass:"row_wrapper row_vcenter"},[_c('h4',[_vm._v("文章类型")]),_vm._v(" "),_c('div',{staticClass:"btn row_wrapper row_vcenter",attrs:{"type":"updata"},on:{"click":_vm.showType}},[_vm._v(_vm._s(_vm.typeObj.TypeName))])]),_vm._v(" "),_c('div',{staticClass:"text_right"},[_c('div',{staticClass:"edit_wrapper"},[_c('div',{staticClass:"btn",attrs:{"type":"save"},on:{"click":_vm.saveHandler}},[_vm._v("保 存")]),_vm._v(" "),_c('div',{staticClass:"title_wrapper"},[_c('h4',[_vm._v("文章标题")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.ArticalTitle),expression:"ArticalTitle"}],domProps:{"value":(_vm.ArticalTitle)},on:{"input":function($event){if($event.target.composing){ return; }_vm.ArticalTitle=$event.target.value}}})]),_vm._v(" "),_c('h4',[_vm._v("文章详情")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.areaInput),expression:"areaInput"}],domProps:{"value":(_vm.areaInput)},on:{"input":function($event){if($event.target.composing){ return; }_vm.areaInput=$event.target.value}}})])]),_vm._v(" "),_c('div',{staticClass:"mobile_view markdown-body"},[_c('div',{staticClass:"mobile_header"},[_vm._v(_vm._s(_vm.ArticalTitle))]),_vm._v(" "),_c('div',{staticClass:"mobile_content"},[_c('div',{domProps:{"innerHTML":_vm._s(_vm.articalDetail)}})])])]),_vm._v(" "),_c('div',{staticClass:"menu_wrapper",class:{active_menu:_vm.left_active}},_vm._l((_vm.$store.state.ArticalTypeModel),function(item){return _c('div',{staticClass:"munu_item",on:{"click":function($event){_vm.chooseType(item)}}},[_vm._v(_vm._s(item.TypeName))])}))])}
+  __vue__options__.render =function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"artical_detail_wrapper",class:{active:_vm.$store.state.showInput}},[_c('div',{staticClass:"header_bc row_wrapper row_vcenter"},[_c('svg',{staticClass:"left_icon",on:{"click":_vm.back}},[_c('use',{attrs:{"xlink:href":_vm.$store.state.commonIcon+'#左箭头'}})])]),_vm._v(" "),_c('div',{staticClass:"content_wrapper"},[_c('div',{staticClass:"row_wrapper row_vcenter"},[_c('h4',[_vm._v("文章类型")]),_vm._v(" "),_c('div',{staticClass:"btn row_wrapper row_vcenter",attrs:{"type":"updata"},on:{"click":_vm.showType}},[_vm._v(_vm._s(_vm.typeObj.TypeName))])]),_vm._v(" "),_c('div',{staticClass:"text_right"},[_c('div',{staticClass:"edit_wrapper"},[_c('div',{staticClass:"btn",attrs:{"type":"save"},on:{"click":_vm.saveHandler}},[_vm._v("保 存")]),_vm._v(" "),_c('div',{staticClass:"title_wrapper"},[_c('h4',[_vm._v("文章标题")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.ArticalTitle),expression:"ArticalTitle"}],domProps:{"value":(_vm.ArticalTitle)},on:{"input":function($event){if($event.target.composing){ return; }_vm.ArticalTitle=$event.target.value}}})]),_vm._v(" "),_c('div',{staticClass:"title_wrapper"},[_c('h4',[_vm._v("文章简介")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.Introduction),expression:"Introduction"}],domProps:{"value":(_vm.Introduction)},on:{"input":function($event){if($event.target.composing){ return; }_vm.Introduction=$event.target.value}}})]),_vm._v(" "),_c('h4',[_vm._v("文章详情")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.areaInput),expression:"areaInput"}],domProps:{"value":(_vm.areaInput)},on:{"input":function($event){if($event.target.composing){ return; }_vm.areaInput=$event.target.value}}})])]),_vm._v(" "),_c('div',{staticClass:"mobile_view markdown-body"},[_c('div',{staticClass:"mobile_header"},[_vm._v(_vm._s(_vm.ArticalTitle))]),_vm._v(" "),_c('div',{staticClass:"mobile_content"},[_c('div',{domProps:{"innerHTML":_vm._s(_vm.articalDetail)}})])])]),_vm._v(" "),_c('div',{staticClass:"menu_wrapper",class:{active_menu:_vm.left_active}},_vm._l((_vm.$store.state.ArticalTypeModel),function(item){return _c('div',{staticClass:"munu_item",on:{"click":function($event){_vm.chooseType(item)}}},[_vm._v(_vm._s(item.TypeName))])}))])}
   __vue__options__.staticRenderFns =[]
   __vue__options__._scopeId = "_v-81814953"
   

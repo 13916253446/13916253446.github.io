@@ -15,8 +15,6 @@ html {
   height: 100%;
   top: 0;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  will-change: scroll;
   color: #666;
   background-color: #f4f4f4;
 }
@@ -77,6 +75,7 @@ html {
   left: 0;
   right: 0;
   top: 0;
+  padding: 0 0.4rem /* 30/75 */;
 }
 /* 底部状态栏样式 */
 [data-dpr="1"] .bottom_wrapper {
@@ -190,4 +189,15 @@ html {
 }
 .scroll_x_display {
   display: initial;
+}
+.back_icon {
+  width: 0.666667rem /* 50/75 */;
+  height: 0.666667rem /* 50/75 */;
+}
+.back_box {
+  height: 100%;
+  width: 1.066667rem /* 80/75 */;
+}
+.text_center {
+  text-align: center;
 }

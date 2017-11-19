@@ -35,7 +35,7 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
           }
       },
       created: function() {
-          //初始化数据
+          //初始化数据           
           this.getData();
       },
       watch: {
@@ -46,7 +46,7 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
               });
           }
       },
-      mounted: function() {
+      mounted: function() {         
           this.$nextTick(function() {
               this.scroll = new BScroll(this.$refs.scroll, {
                   click: true,
@@ -62,17 +62,20 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
                           this.scroll.finishPullUp();   
                        }.bind(this));
                    }                                     
-              }.bind(this))
+              }.bind(this));
+              //加载markdown脚本
+              require.loadJs(this.$store.state.markdown_js_url);  
+              require.loadCss({url:this.$store.state.markdown_css_url});              
           });
       },
       methods: {
           //分页获取数据
-          getData: function(callback) {
+          getData: function(callback) {               
               var current = this;
               var ArticalDetail = Bmob.Object.extend("ArticalDetail");
               var query = new Bmob.Query(ArticalDetail);              
               if(this.model.objectId!="1993"){
-                  query.equalTo("TypeId", this.model.TypeId);
+                  query.equalTo("ArticalTypeId", this.model.TypeId);
               }
               query.limit(this.pageCount); //返回条数
               query.skip(this.articalModel.length || 0); //跳出多少条数据
@@ -89,7 +92,13 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
                       current.haveData = false;
                   }
               });
-          }
+          },
+          //查看文章
+          viewArtical:function(parrams){
+              var model=parrams.item;
+              this.$store.state.articalModel=model;
+              this.$router.push({path:"/detail"});
+          }            
       }
   }
   
@@ -99,7 +108,7 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
   }else{
     __vue__options__ = module.exports;
   }
-  __vue__options__.render =function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"scroll",staticClass:"current_wrappers"},[_c('div',{staticClass:"current_scroll_box"},_vm._l((_vm.articalModel),function(item){return _c('div',{staticClass:"artical_item"},[_c('div',{staticClass:"row_line"}),_vm._v(" "),_c('div',{staticClass:"artical_content_wrapper"},[_c('div',{staticClass:"row_wrapper row_vcenter"},[_c('img',{staticClass:"admin_icon",attrs:{"src":'../../../resource/img/common/advance.jpg',"alt":""}}),_vm._v(" "),_c('div',{staticClass:"small_font admin_name row_full"},[_vm._v(" 小崔")]),_vm._v(" "),_c('div',{staticClass:"small_font artical_type"},[_vm._v(_vm._s(item.ArticalTypeName))])]),_vm._v(" "),_c('div',{staticClass:"artical_title"},[_vm._v(_vm._s(item.ArticalTitle))]),_vm._v(" "),_c('div',{staticClass:"artical_detail small_font"},[_vm._v(_vm._s(item.Detail))])]),_vm._v(" "),_c('div',{staticClass:"row_line"})])}))])}
+  __vue__options__.render =function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"scroll",staticClass:"current_wrappers"},[_c('div',{staticClass:"current_scroll_box"},_vm._l((_vm.articalModel),function(item){return _c('div',{directives:[{name:"tap",rawName:"v-tap",value:({methods:_vm.viewArtical,item:item}),expression:"{methods:viewArtical,item:item}"}],staticClass:"artical_item"},[_c('div',{staticClass:"row_line"}),_vm._v(" "),_c('div',{staticClass:"artical_content_wrapper"},[_c('div',{staticClass:"row_wrapper row_vcenter"},[_c('img',{staticClass:"admin_icon",attrs:{"src":'../../../resource/img/common/advance.jpg',"alt":""}}),_vm._v(" "),_c('div',{staticClass:"small_font admin_name row_full"},[_vm._v(" 小崔")]),_vm._v(" "),_c('div',{staticClass:"small_font artical_type"},[_vm._v(_vm._s(item.ArticalTypeName))])]),_vm._v(" "),_c('div',{staticClass:"artical_title"},[_vm._v(_vm._s(item.ArticalTitle))]),_vm._v(" "),_c('div',{staticClass:"artical_detail small_font"},[_vm._v(_vm._s(item.Introduction))])]),_vm._v(" "),_c('div',{staticClass:"row_line"})])}))])}
   __vue__options__.staticRenderFns =[]
   __vue__options__._scopeId = "_v-b466f56c"
   
