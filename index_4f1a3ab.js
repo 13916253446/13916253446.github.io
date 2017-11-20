@@ -17,7 +17,7 @@ var pageData = {
             //当前文章详情模型
             articalModel:{},
             markdown_js_url:"resource/js/common/markdown_3b6d845.js",
-            markdown_css_url:"resource/css/common/github-markdown_44f7101.css"
+            markdown_css_url:"resource/css/common/markdown_fb1df62.css"
         }
     });
     //注册路由器
