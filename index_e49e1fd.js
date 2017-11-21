@@ -10,14 +10,16 @@ var pageData = {
 
 };
 !function () {
+  
     Bmob.initialize("317bbc73031603ad0df4a6af2b6b4678", "b16e0af7f4f66ba6ef6a1a49a9336233");
     //注册状态管理器
     pageData.$store = new Vuex.Store({
         state: {
             //当前文章详情模型
             articalModel:{},
-            markdown_js_url:"resource/js/common/markdown_3b6d845.js",
-            markdown_css_url:"resource/css/common/markdown_cad946e.css"
+            markdown_js_url:"resource/js/common/marked.min_d3d4821.js",
+            markdown_css_url:"resource/css/common/markdown_ef3fd93.css",
+            light_js_url:"resource/js/common/highlight.min_6fe7a80.js"
         }
     });
     //注册路由器

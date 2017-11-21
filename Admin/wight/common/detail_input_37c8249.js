@@ -54,7 +54,7 @@ define('Admin/wight/common/detail_input.vue', function(require, exports, module)
       },
       watch: {
           areaInput: function(val) {
-              this.articalDetail = markdown.toHTML(val);
+              this.articalDetail = marked(val);
           },
           model: function(val) {
               this.updateModel = val;

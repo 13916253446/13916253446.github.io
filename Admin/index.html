@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的博客</title>
-    <link rel="preload" href="index_3a8e5c1.css" as="style" onload="this.rel='stylesheet'" />
-    <noscript></noscript>
+    
+    <noscript>
+    </noscript>
 
-    <link rel="stylesheet" href="index_3a8e5c1.css" />
-    <link rel="stylesheet" href="../resource/css/common/markdown_cad946e.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="index_3a8e5c1.css" />
+    <link rel="stylesheet" href="../resource/css/common/markdown_ef3fd93.css" />
+    <link rel="stylesheet" href="../resource/css/common/monokai_sublime.min_503b527.css" />
 </head>
+
 <body>
     <div class="vue_wrapper">
-       <div class="header_box">
-           <div class="header_wrapper row_wrapper row_vcenter">
+        <div class="header_box">
+            <div class="header_wrapper row_wrapper row_vcenter">
                 <div class="row_full"></div>
-                <div><img class="admin_icon" src="../resource/img/common/advance.jpg" alt=""></div>
-           </div>
-       </div>
-       <div class="bottom_box">
+                <div>
+                    <img class="admin_icon" src="../resource/img/common/advance.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="bottom_box">
             <div class="bot_left_box">
                 <menu-component></menu-component>
             </div>
             <div class="bot_right_box">
                 <router-view></router-view>
             </div>
-       </div>
-    </div> 
+        </div>
+    </div>
 
 <script src="mod_ca7268a.js"></script>
 <script type="text/javascript">/*resourcemap*/
@@ -37,7 +43,7 @@ require.resourceMap({
       "type": "js"
     },
     "Admin/wight/common/detail_input.vue": {
-      "url": "wight/common/detail_input_e1b910c.js",
+      "url": "wight/common/detail_input_37c8249.js",
       "type": "js"
     },
     "Admin/wight/common/artical_detail.vue": {
@@ -49,56 +55,68 @@ require.resourceMap({
 });</script>
 <script type="text/javascript" src="wight/common/menus_70281a9.js"></script>
 <script src="../resource/js/common/pc.base_0c5db29.js"></script>
-<script src="../resource/js/common/markdown_3b6d845.js"></script>
-<script type="text/javascript">
-        var pageData={
+<script src="../resource/js/common/marked.min_d3d4821.js"></script>
+<script src="../resource/js/common/highlight.min_6fe7a80.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();
+
+        marked.setOptions({
+            highlight: function (code) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
+        var pageData = {
 
         };
-       
-        !function(){
-            var routerModel={
-                1:"type",
-                3:"detail"
+
+        !function () {
+            var routerModel = {
+                1: "type",
+                3: "detail"
             };
             //定义状态管理
-            var store=new Vuex.Store({
-                state:{
-                    commonIcon:"../resource/img/common/common_40b8338.svg",
-                    menuActiveId:0,
-                    login:0,//登录状态0:未登录,1:已登录,2:登录中
-                    showInput:false,//是否显示文章录入框
-                    ArticalTypeModel:[],//文章类型列表
-                    detailModel:[],//文章列表
+            var store = new Vuex.Store({
+                state: {
+                    commonIcon: "../resource/img/common/common_40b8338.svg",
+                    menuActiveId: 0,
+                    login: 0,//登录状态0:未登录,1:已登录,2:登录中
+                    showInput: false,//是否显示文章录入框
+                    ArticalTypeModel: [],//文章类型列表
+                    detailModel: [],//文章列表
                 },
-                mutations:{
+                mutations: {
                     //切换菜单
-                    checkMenu:function(state,id){
-                        state.menuActiveId=id||1;
-                        if(routerModel[id]){
-                            router.push({path:routerModel[id]});
+                    checkMenu: function (state, id) {
+                        state.menuActiveId = id || 1;
+                        if (routerModel[id]) {
+                            router.push({ path: routerModel[id] });
                         }
                     }
                 }
             });
             //定义路由
-            var router=new VueRouter({
+            var router = new VueRouter({
                 routes: [
-                    {path:"/type",component:Vue.component("",function(resolve){
-                        require.async(["Admin/wight/common/artical_type.vue"],resolve);
-                    })},
-                    {path:"/detail",component:Vue.component("",function(resolve){
-                        require.async(["Admin/wight/common/artical_detail.vue"],resolve);
-                    })},
+                    {
+                        path: "/type", component: Vue.component("", function (resolve) {
+                            require.async(["Admin/wight/common/artical_type.vue"], resolve);
+                        })
+                    },
+                    {
+                        path: "/detail", component: Vue.component("", function (resolve) {
+                            require.async(["Admin/wight/common/artical_detail.vue"], resolve);
+                        })
+                    },
                 ]
             });
-            pageData.vue=new Vue({
-                router:router,
-                store:store,
-                components:{
-                    "menu-component":require("Admin/wight/common/menus.vue")
+            pageData.vue = new Vue({
+                router: router,
+                store: store,
+                components: {
+                    "menu-component": require("Admin/wight/common/menus.vue")
                 }
             }).$mount(".vue_wrapper");
         }();
     </script>
 </body>
+
 </html>

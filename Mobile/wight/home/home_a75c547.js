@@ -64,7 +64,8 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
                    }                                     
               }.bind(this));
               //加载markdown脚本
-              require.loadJs(this.$store.state.markdown_js_url);  
+              require.loadJs(this.$store.state.markdown_js_url);
+              require.loadJs(this.$store.state.light_js_url);   
               require.loadCss({url:this.$store.state.markdown_css_url});              
           });
       },

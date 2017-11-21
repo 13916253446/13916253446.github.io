@@ -18,28 +18,36 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
   //
   //
   
-  module.exports={
-      data:function(){
-          return{
-  
+  module.exports = {
+      data: function() {
+          return {
           }
       },
-      computed:{
-          content:function(){                
-              return markdown.toHTML(this.$store.state.articalModel.Detail||"");
+      computed: {
+          content: function() {
+              return marked(this.$store.state.articalModel.Detail || "");
           }
       },
-      methods:{
+      methods: {
           //点击返回
-          back:function(){
+          back: function() {
               this.$router.go(-1);
           }
       },
-       mounted:function(){
-           this.$nextTick(function(){
-               this.scroll=new BScroll(this.$refs.scroll);
-           });
-       }
+      beforeCreate:function(){
+           marked.setOptions({
+              highlight: function(code) {
+                  return hljs.highlightAuto(code).value;
+              }
+          });
+      },
+      mounted: function() {
+          this.$nextTick(function() {
+              this.scroll = new BScroll(this.$refs.scroll,{
+                  scrollX:true,
+              });
+          });           
+      }
   }
   
   var __vue__options__;
