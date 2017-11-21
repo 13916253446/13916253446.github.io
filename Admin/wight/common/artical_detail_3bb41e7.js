@@ -93,23 +93,21 @@ define('Admin/wight/common/artical_detail.vue', function(require, exports, modul
           },
           //点击修改
           updateTypeHander: function(item) {
-              var current=this;
-              this.isAdd=false;
+              var current = this;
+              this.isAdd = false;
               this.updateModel = item;
               tools.showLoading();
-              var ArticalTypes = Bmob.Object.extend("ArticalTypes");            
-              var query = new Bmob.Query(ArticalTypes);                          
+              var ArticalTypes = Bmob.Object.extend("ArticalTypes");
+              var query = new Bmob.Query(ArticalTypes);
               query.get(item.parent.objectId, {
-                  success: function(gameScore) {    
-                      tools.hideLoading();                                        
-                      Vue.set(current.updateModel.parent,"TypeName",gameScore.get("TypeName"));
-                      Vue.set(current.updateModel.parent,"TypeId",gameScore.get("TypeId"));                                          
+                  success: function(gameScore) {
+                      tools.hideLoading();
+                      Vue.set(current.updateModel.parent, "TypeName", gameScore.get("TypeName"));
+                      Vue.set(current.updateModel.parent, "TypeId", gameScore.get("TypeId"));
                       current.$store.state.showInput = true;
                   },
-                  error: function(object, error) {                      
-                  }
+                  error: function(object, error) {}
               });
-              
           }
       },
       components: {
