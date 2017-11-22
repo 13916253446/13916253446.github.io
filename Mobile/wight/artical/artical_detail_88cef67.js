@@ -34,6 +34,17 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
               this.$router.go(-1);
           }
       },
+      activated:function(){
+          this.$nextTick(function(){
+              this.scroll.refresh();
+          });
+          var current=this;            
+          [].map.call(this.$refs.scroll.querySelectorAll("img"),function(item){
+              item.onload=function(){
+                  current.scroll.refresh();
+              }
+          }); 
+      },
       beforeCreate:function(){
            marked.setOptions({
               highlight: function(code) {
@@ -47,7 +58,13 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
                   scrollY:true,
                   eventPassthrough:"horizontal"
               });
-          });           
+          });  
+          var current=this;            
+          [].map.call(this.$refs.scroll.querySelectorAll("img"),function(item){
+              item.onload=function(){
+                  current.scroll.refresh();
+              }
+          });      
       }
   }
   

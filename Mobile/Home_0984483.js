@@ -71,7 +71,7 @@ define('Mobile/Home.vue', function(require, exports, module) {
               require.async(["Mobile/wight/home/home.vue"], resolve)
           });
       },
-      created: function() {
+      created: function() {          
           //获取所有文章类型
           var ArticalTypes = Bmob.Object.extend("ArticalTypes");
           var query = new Bmob.Query(ArticalTypes);
