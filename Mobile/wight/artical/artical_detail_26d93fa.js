@@ -41,6 +41,11 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
               }
           });
       },
+     activated:function(){
+            this.$nextTick(function(){
+                this.scroll.refresh();
+            })
+        },
       mounted: function() {
           this.$nextTick(function() {
               this.scroll = new BScroll(this.$refs.scroll,{
