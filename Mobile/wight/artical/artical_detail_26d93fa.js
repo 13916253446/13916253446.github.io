@@ -44,7 +44,7 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
       mounted: function() {
           this.$nextTick(function() {
               this.scroll = new BScroll(this.$refs.scroll,{
-                  scrollX:true,
+                  scrollY:true,
                   eventPassthrough:"horizontal"
               });
           });           
@@ -61,7 +61,7 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
   __vue__options__.staticRenderFns =[]
   __vue__options__._scopeId = "_v-acdb0ef8"
   
-  ;(function insertCSS(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.appendChild(document.createTextNode(e)),document.getElementsByTagName("head")[0].appendChild(t)})(".artical_title[_v-acdb0ef8] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.artical_content[_v-acdb0ef8] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #fff;\n}\n[data-dpr=\"1\"] .artical_content[_v-acdb0ef8] {\n  top: 51px;\n}\n[data-dpr=\"1\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 16px;\n}\n[data-dpr=\"2\"] .artical_content[_v-acdb0ef8] {\n  top: 101px;\n}\n[data-dpr=\"2\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 32px;\n}\n[data-dpr=\"3\"] .artical_content[_v-acdb0ef8] {\n  top: 151px;\n}\n[data-dpr=\"3\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 48px;\n}\n.scroll_box[_v-acdb0ef8] {\n  min-height: 100%;\n  padding-bottom: 0.266667rem /* 20/75 */;\n  -webkit-box-sizing: content-box;\n     -moz-box-sizing: content-box;\n          box-sizing: content-box;\n  padding: 0.266667rem /* 20/75 */;\n}");
+  ;(function insertCSS(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.appendChild(document.createTextNode(e)),document.getElementsByTagName("head")[0].appendChild(t)})(".artical_title[_v-acdb0ef8] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.artical_content[_v-acdb0ef8] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #fff;\n}\n[data-dpr=\"1\"] .artical_content[_v-acdb0ef8] {\n  top: 51px;\n}\n[data-dpr=\"1\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 16px;\n}\n[data-dpr=\"2\"] .artical_content[_v-acdb0ef8] {\n  top: 101px;\n}\n[data-dpr=\"2\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 32px;\n}\n[data-dpr=\"3\"] .artical_content[_v-acdb0ef8] {\n  top: 151px;\n}\n[data-dpr=\"3\"] .markdown-body[_v-acdb0ef8] {\n  font-size: 48px;\n}\n.scroll_box[_v-acdb0ef8] {\n  min-height: 110%;\n  padding-bottom: 0.266667rem /* 20/75 */;\n  padding: 0.266667rem /* 20/75 */;\n}");
   
 
 });
