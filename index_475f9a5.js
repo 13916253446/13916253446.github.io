@@ -18,7 +18,7 @@ var pageData = {
             //当前文章详情模型
             articalModel:{},
             markdown_js_url:"resource/js/common/marked.min_d3d4821.js",
-            markdown_css_url:"resource/css/common/markdown_ef3fd93.css",
+            markdown_css_url:"resource/css/common/markdown_33cf225.css",
             light_js_url:"resource/js/common/highlight.min_6fe7a80.js"
         }
     });

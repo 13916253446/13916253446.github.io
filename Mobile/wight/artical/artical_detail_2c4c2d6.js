@@ -45,6 +45,7 @@ define('Mobile/wight/artical/artical_detail.vue', function(require, exports, mod
           this.$nextTick(function() {
               this.scroll = new BScroll(this.$refs.scroll,{
                   scrollX:true,
+                  eventPassthrough:"horizontal"
               });
           });           
       }
