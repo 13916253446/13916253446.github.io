@@ -66,6 +66,50 @@ var pageData = {
     }).$mount(".page");
     //初始化路由
     if (pageData.vue.$route.meta.id == null) {
+        scrollModel.start();
         pageData.$router.replace({ path: "/main/home" });
+    };
+    //定义进度条模型
+    function ScrollBar(){
+         this.timer=null;
+         this.scrollDom=document.querySelector(".history_scrollbar");
+    };
+    ScrollBar.prototype.start=function(){
+        var initNumer=-100;
+        var current=this;
+        this.timer=requestAnimationFrame(scroll);
+        function scroll(){
+            if(initNumer<-50){
+                initNumer+=0.5;              
+            }else if(initNumer<-20){
+                initNumer+=0.3;
+            }else if(initNumer<-5){
+                initNumer+=0.1;
+            }  
+            var translate= initNumer+"%";     
+            current.scrollDom.style.transform="translate3d("+translate+",0,0)";
+            current.scrollDom.style.webkitTransform="translate3d("+translate+",0,0)";
+            current.timer=requestAnimationFrame(scroll);
+        }
+    };
+    ScrollBar.prototype.end=function(){
+        cancelAnimationFrame(this.timer);
+        this.scrollDom.style.transition="transform .1s,opacity .3s";
+        this.scrollDom.style.webkitTransition="transform .1s,opacity .3s";
+        var timer=requestAnimationFrame(function(){
+            this.scrollDom.style.transform="translate3d(0,0,0)";
+            this.scrollDom.style.webkitTransform="translate3d(0,0,0)";
+            this.scrollDom.style.opacity="0";
+            cancelAnimationFrame(timer);                      
+        }.bind(this));
+        var timers=setTimeout(function(){
+            this.scrollDom.style.transition="null";
+            this.scrollDom.style.webkitTransition="null";
+            this.scrollDom.style.transform="translate3d(-100%,0,0)";
+            this.scrollDom.style.webkitTransform="translate3d(-100%,0,0)";
+            this.scrollDom.style.opacity="1";
+            clearTimeout(timers);
+        }.bind(this),300);
     }
+    window.scrollModel=new ScrollBar();
 }();

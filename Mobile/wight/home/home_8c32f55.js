@@ -96,7 +96,8 @@ define('Mobile/wight/home/home.vue', function(require, exports, module) {
           },
           //查看文章
           viewArtical:function(parrams){
-              var model=parrams.item;
+              var model=parrams.item;              
+              scrollModel.start();
               this.$store.state.articalModel=model;
               this.$router.push({path:"/detail"});
           }            
