@@ -10,16 +10,58 @@ var pageData = {
 
 };
 !function () {
-  
+    //定义进度条模型
+    function ScrollBar() {
+        this.timer = null;
+        this.scrollDom = document.querySelector(".history_scrollbar");
+    };
+    ScrollBar.prototype.start = function () {
+        var initNumer = -100;
+        var current = this;
+        this.timer = requestAnimationFrame(scroll);
+        function scroll() {
+            if (initNumer < -50) {
+                initNumer += 0.5;
+            } else if (initNumer < -20) {
+                initNumer += 0.3;
+            } else if (initNumer < -5) {
+                initNumer += 0.1;
+            }
+            var translate = initNumer + "%";
+            current.scrollDom.style.transform = "translate3d(" + translate + ",0,0)";
+            current.scrollDom.style.webkitTransform = "translate3d(" + translate + ",0,0)";
+            current.timer = requestAnimationFrame(scroll);
+        }
+    };
+    ScrollBar.prototype.end = function () {
+        cancelAnimationFrame(this.timer);
+        this.scrollDom.style.transition = "transform .1s,opacity .3s";
+        this.scrollDom.style.webkitTransition = "transform .1s,opacity .3s";
+        var timer = requestAnimationFrame(function () {
+            this.scrollDom.style.transform = "translate3d(0,0,0)";
+            this.scrollDom.style.webkitTransform = "translate3d(0,0,0)";
+            this.scrollDom.style.opacity = "0";
+            cancelAnimationFrame(timer);
+        }.bind(this));
+        var timers = setTimeout(function () {
+            this.scrollDom.style.transition = "null";
+            this.scrollDom.style.webkitTransition = "null";
+            this.scrollDom.style.transform = "translate3d(-100%,0,0)";
+            this.scrollDom.style.webkitTransform = "translate3d(-100%,0,0)";
+            this.scrollDom.style.opacity = "1";
+            clearTimeout(timers);
+        }.bind(this), 300);
+    }
+    window.scrollModel = new ScrollBar();
     Bmob.initialize("317bbc73031603ad0df4a6af2b6b4678", "b16e0af7f4f66ba6ef6a1a49a9336233");
     //注册状态管理器
     pageData.$store = new Vuex.Store({
         state: {
             //当前文章详情模型
-            articalModel:{},
-            markdown_js_url:"resource/js/common/marked.min_d3d4821.js",
-            markdown_css_url:"resource/css/common/markdown_33cf225.css",
-            light_js_url:"resource/js/common/highlight.min_6fe7a80.js"
+            articalModel: {},
+            markdown_js_url: "resource/js/common/marked.min_d3d4821.js",
+            markdown_css_url: "resource/css/common/markdown_33cf225.css",
+            light_js_url: "resource/js/common/highlight.min_6fe7a80.js"
         }
     });
     //注册路由器
@@ -45,7 +87,7 @@ var pageData = {
             },
             {
                 //文章详情
-                path:"/detail",component: Vue.component("",function(resolve){
+                path: "/detail", component: Vue.component("", function (resolve) {
                     require.async(["Mobile/wight/artical/artical_detail.vue"], resolve);
                 }), meta: { id: 4 },
             }
@@ -55,11 +97,11 @@ var pageData = {
     pageData.vue = new Vue({
         data: {
             //公共图标库
-            commonIcon: "resource/img/common/mobile_common_6547d42.svg",           
+            commonIcon: "resource/img/common/mobile_common_6547d42.svg",
             //动画名称
             transitionName: "",
         },
-        methods: {           
+        methods: {
         },
         store: pageData.$store,
         router: pageData.$router
@@ -69,47 +111,4 @@ var pageData = {
         scrollModel.start();
         pageData.$router.replace({ path: "/main/home" });
     };
-    //定义进度条模型
-    function ScrollBar(){
-         this.timer=null;
-         this.scrollDom=document.querySelector(".history_scrollbar");
-    };
-    ScrollBar.prototype.start=function(){
-        var initNumer=-100;
-        var current=this;
-        this.timer=requestAnimationFrame(scroll);
-        function scroll(){
-            if(initNumer<-50){
-                initNumer+=0.5;              
-            }else if(initNumer<-20){
-                initNumer+=0.3;
-            }else if(initNumer<-5){
-                initNumer+=0.1;
-            }  
-            var translate= initNumer+"%";     
-            current.scrollDom.style.transform="translate3d("+translate+",0,0)";
-            current.scrollDom.style.webkitTransform="translate3d("+translate+",0,0)";
-            current.timer=requestAnimationFrame(scroll);
-        }
-    };
-    ScrollBar.prototype.end=function(){
-        cancelAnimationFrame(this.timer);
-        this.scrollDom.style.transition="transform .1s,opacity .3s";
-        this.scrollDom.style.webkitTransition="transform .1s,opacity .3s";
-        var timer=requestAnimationFrame(function(){
-            this.scrollDom.style.transform="translate3d(0,0,0)";
-            this.scrollDom.style.webkitTransform="translate3d(0,0,0)";
-            this.scrollDom.style.opacity="0";
-            cancelAnimationFrame(timer);                      
-        }.bind(this));
-        var timers=setTimeout(function(){
-            this.scrollDom.style.transition="null";
-            this.scrollDom.style.webkitTransition="null";
-            this.scrollDom.style.transform="translate3d(-100%,0,0)";
-            this.scrollDom.style.webkitTransform="translate3d(-100%,0,0)";
-            this.scrollDom.style.opacity="1";
-            clearTimeout(timers);
-        }.bind(this),300);
-    }
-    window.scrollModel=new ScrollBar();
 }();
