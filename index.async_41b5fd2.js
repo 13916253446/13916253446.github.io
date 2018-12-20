@@ -1,1 +1,0 @@
-!function(){pageData.$router.beforeEach(function(a,e,t){var r=parseInt(e.meta.id||0),n=parseInt(a.meta.id||0);pageData.vue.transitionName=n>r?"slide-left":"slide-right",t()}),pageData.$router.afterEach(function(){scrollModel.end()})}();
