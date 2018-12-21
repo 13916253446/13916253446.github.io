@@ -3,13 +3,13 @@
   "ES6.async.js": "static/asyncjs/ES6.async.8bd12f2.js",
   "VUE.plugin.js": "static/asyncjs/VUE.plugin.4ba554b.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.cc8590e.js",
-  "blog.js": "static/js/blog.4dfd409.js",
+  "blog.js": "static/js/blog.6556834.js",
   "styles.css": "static/css/styles.1f189b4.async.css",
   "styles.js": "static/asyncjs/styles.1f189b4.js",
-  "sprite.efef000.svg": "sprite.efef000.svg",
+  "sprite.84c4139.svg": "sprite.84c4139.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.c58fc7f35d615d364e0b4ab15bbcd20a.js": "precache-manifest.c58fc7f35d615d364e0b4ab15bbcd20a.js",
+  "precache-manifest.6459dac365312d8f3b4d43378c130ba2.js": "precache-manifest.6459dac365312d8f3b4d43378c130ba2.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.1f189b4.async.css.map": "static/css/styles.1f189b4.async.css.map"
 }
