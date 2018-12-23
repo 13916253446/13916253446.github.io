@@ -9,12 +9,12 @@
   "blog.js": "static/js/blog.ef9a4e0.js",
   "chrome.skill.js": "static/asyncjs/chrome.skill.48f3556.js",
   "newAPI.LifecycleAPI.js": "static/asyncjs/newAPI.LifecycleAPI.36a2317.js",
-  "styles.css": "static/css/styles.6add5ff.async.css",
-  "styles.js": "static/asyncjs/styles.6add5ff.js",
+  "styles.css": "static/css/styles.a9e56a2.async.css",
+  "styles.js": "static/asyncjs/styles.a9e56a2.js",
   "sprite.89f37fe.svg": "sprite.89f37fe.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.e54c2eee92ad238b91af129e2e9e1d37.js": "precache-manifest.e54c2eee92ad238b91af129e2e9e1d37.js",
+  "precache-manifest.c643676a63ca683260c4a8c2e681ded6.js": "precache-manifest.c643676a63ca683260c4a8c2e681ded6.js",
   "service-worker.js": "service-worker.js",
-  "static/css/styles.6add5ff.async.css.map": "static/css/styles.6add5ff.async.css.map"
+  "static/css/styles.a9e56a2.async.css.map": "static/css/styles.a9e56a2.async.css.map"
 }
