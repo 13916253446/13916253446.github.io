@@ -18,9 +18,10 @@
   "VUE.plugin.js": "static/asyncjs/VUE.plugin.4ba554b.js",
   "VUE.render.js": "static/asyncjs/VUE.render.f7064f2.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.89e8a92.js",
-  "blog.js": "static/js/blog.a62e02c.js",
+  "blog.js": "static/js/blog.1c00420.js",
   "bug.webpack.js": "static/asyncjs/bug.webpack.3e2d65b.js",
   "chrome.skill.js": "static/asyncjs/chrome.skill.48f3556.js",
+  "javascript.ast.js": "static/asyncjs/javascript.ast.ad99c5d.js",
   "javascript.object.js": "static/asyncjs/javascript.object.5f08260.js",
   "javascript.skill.js": "static/asyncjs/javascript.skill.224b39a.js",
   "newAPI.LifecycleAPI.js": "static/asyncjs/newAPI.LifecycleAPI.36a2317.js",
@@ -29,7 +30,7 @@
   "sprite.eebb178.svg": "sprite.eebb178.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.4531235cab4eceda66c789c509100f8e.js": "precache-manifest.4531235cab4eceda66c789c509100f8e.js",
+  "precache-manifest.489974b7c4fb2ceb05df552179d238d9.js": "precache-manifest.489974b7c4fb2ceb05df552179d238d9.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.de83389.async.css.map": "static/css/styles.de83389.async.css.map"
 }
