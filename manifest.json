@@ -1,5 +1,6 @@
 {
   "404.js": "static/asyncjs/404.a5f3a11.js",
+  "CSS.backgroundPosition.js": "static/asyncjs/CSS.backgroundPosition.d6d7db3.js",
   "CSS.boxShadow.js": "static/asyncjs/CSS.boxShadow.884bad7.js",
   "CSS.changeSkin.js": "static/asyncjs/CSS.changeSkin.2c45331.js",
   "CSS.cssGetListCount.js": "static/asyncjs/CSS.cssGetListCount.77dd41f.js",
@@ -43,7 +44,7 @@
   "VUE.render.js": "static/asyncjs/VUE.render.f7064f2.js",
   "VUE.setTitle.js": "static/asyncjs/VUE.setTitle.fac8c51.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.8a32462.js",
-  "blog.js": "static/js/blog.bd0c048.js",
+  "blog.js": "static/js/blog.bdd74d9.js",
   "bug.hybrid.js": "static/asyncjs/bug.hybrid.6acdb3e.js",
   "bug.webpack.js": "static/asyncjs/bug.webpack.3e2d65b.js",
   "chrome.nativeLazy.js": "static/asyncjs/chrome.nativeLazy.e7da2ce.js",
@@ -76,7 +77,7 @@
   "sprite.c87cf47.svg": "sprite.c87cf47.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.a869f7d1ae3167d495df69b330390271.js": "precache-manifest.a869f7d1ae3167d495df69b330390271.js",
+  "precache-manifest.81213960a20ebe701528ec223c1742f8.js": "precache-manifest.81213960a20ebe701528ec223c1742f8.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.9f0087b.async.css.map": "static/css/styles.9f0087b.async.css.map"
 }
