@@ -46,7 +46,7 @@
   "VUE.render.js": "static/asyncjs/VUE.render.f7064f2.js",
   "VUE.setTitle.js": "static/asyncjs/VUE.setTitle.fac8c51.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.8a32462.js",
-  "blog.js": "static/js/blog.c226b13.js",
+  "blog.js": "static/js/blog.fa15f7b.js",
   "bug.hybrid.js": "static/asyncjs/bug.hybrid.6acdb3e.js",
   "bug.webpack.js": "static/asyncjs/bug.webpack.3e2d65b.js",
   "chrome.nativeLazy.js": "static/asyncjs/chrome.nativeLazy.e7da2ce.js",
@@ -78,7 +78,7 @@
   "performance.performanceFunctions.js": "static/asyncjs/performance.performanceFunctions.1911eb1.js",
   "performance.preload.js": "static/asyncjs/performance.preload.e4becdc.js",
   "performance.repaint.js": "static/asyncjs/performance.repaint.616bfa3.js",
-  "project.understandsBabel.js": "static/asyncjs/project.understandsBabel.8524e83.js",
+  "project.understandsBabel.js": "static/asyncjs/project.understandsBabel.f9a00f2.js",
   "styles.css": "static/css/styles.d8ff16f.async.css",
   "styles.js": "static/asyncjs/styles.d8ff16f.js",
   "vscode.customeColor.js": "static/asyncjs/vscode.customeColor.5920460.js",
@@ -88,7 +88,7 @@
   "sprite.c08fe31.svg": "sprite.c08fe31.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.d2b2571fcc569538bcdf3b287b442a45.js": "precache-manifest.d2b2571fcc569538bcdf3b287b442a45.js",
+  "precache-manifest.97728f95d76c0f060b43210c95dcf36e.js": "precache-manifest.97728f95d76c0f060b43210c95dcf36e.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.d8ff16f.async.css.map": "static/css/styles.d8ff16f.async.css.map"
 }
