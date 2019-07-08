@@ -27,7 +27,7 @@
   "Foods.pageLifeCircle.js": "static/asyncjs/Foods.pageLifeCircle.f9cd2cd.js",
   "Foods.syncLayout.js": "static/asyncjs/Foods.syncLayout.827f762.js",
   "Packages.CommandLine.js": "static/asyncjs/Packages.CommandLine.87e24aa.js",
-  "Packages.tools.js": "static/asyncjs/Packages.tools.c8d41ed.js",
+  "Packages.tools.js": "static/asyncjs/Packages.tools.6d86552.js",
   "Packages.vue.js": "static/asyncjs/Packages.vue.9656f75.js",
   "Tools.MacSkitll.js": "static/asyncjs/Tools.MacSkitll.7eeb756.js",
   "Tools.gitTheory.js": "static/asyncjs/Tools.gitTheory.6775a43.js",
@@ -49,7 +49,7 @@
   "VUE.render.js": "static/asyncjs/VUE.render.f7064f2.js",
   "VUE.setTitle.js": "static/asyncjs/VUE.setTitle.fac8c51.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.8a32462.js",
-  "blog.js": "static/js/blog.19fc4a3.js",
+  "blog.js": "static/js/blog.aa6b977.js",
   "bug.hybrid.js": "static/asyncjs/bug.hybrid.6acdb3e.js",
   "bug.webpack.js": "static/asyncjs/bug.webpack.3e2d65b.js",
   "chrome.nativeLazy.js": "static/asyncjs/chrome.nativeLazy.e7da2ce.js",
@@ -98,7 +98,7 @@
   "sprite.f5a7ab6.svg": "sprite.f5a7ab6.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.37f50ae593569d2a839dfcdbde449fc1.js": "precache-manifest.37f50ae593569d2a839dfcdbde449fc1.js",
+  "precache-manifest.56c4d0e9f41d89377464bfebb0dc0288.js": "precache-manifest.56c4d0e9f41d89377464bfebb0dc0288.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.05908b7.async.css.map": "static/css/styles.05908b7.async.css.map"
 }
