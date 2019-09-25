@@ -51,7 +51,7 @@
   "VUE.render.js": "static/asyncjs/VUE.render.f7064f2.js",
   "VUE.setTitle.js": "static/asyncjs/VUE.setTitle.fac8c51.js",
   "VUE.skill.js": "static/asyncjs/VUE.skill.8a32462.js",
-  "blog.js": "static/js/blog.20cd924.js",
+  "blog.js": "static/js/blog.f007e4a.js",
   "bug.dll.js": "static/asyncjs/bug.dll.d1887f8.js",
   "bug.hybrid.js": "static/asyncjs/bug.hybrid.6acdb3e.js",
   "bug.vueFix.js": "static/asyncjs/bug.vueFix.bfd616a.js",
@@ -95,6 +95,7 @@
   "standard.comment.js": "static/asyncjs/standard.comment.0806adf.js",
   "styles.css": "static/css/styles.f2445f9.async.css",
   "styles.js": "static/asyncjs/styles.f2445f9.js",
+  "typescript.operator.js": "static/asyncjs/typescript.operator.dbefaa8.js",
   "typescript.skill.js": "static/asyncjs/typescript.skill.7888942.js",
   "typescript.tsd.js": "static/asyncjs/typescript.tsd.1da1af1.js",
   "vscode.customeColor.js": "static/asyncjs/vscode.customeColor.5920460.js",
@@ -105,7 +106,7 @@
   "sprite.3e9c23e.svg": "sprite.3e9c23e.svg",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html",
-  "precache-manifest.11505ca4b0149c600d249f80613656f1.js": "precache-manifest.11505ca4b0149c600d249f80613656f1.js",
+  "precache-manifest.9f78076392d836805ae059dda83ea61a.js": "precache-manifest.9f78076392d836805ae059dda83ea61a.js",
   "service-worker.js": "service-worker.js",
   "static/css/styles.f2445f9.async.css.map": "static/css/styles.f2445f9.async.css.map"
 }
